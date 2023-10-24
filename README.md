@@ -5,10 +5,10 @@ My code in <a href=https://github.com/redonovan/GNN/blob/main/gnn.py>gnn.py</a> 
 
 The NMP4QC paper used a random hyperparameter search with 50 trials for each model and target combination, each training for 540 epochs.  Since a single 540 epoch trial takes ~24 hours on my laptop, I instead ran an abbreviated 14 trial hyperparameter search using a cutdown 15k molecule training dataset, each training for only 10 epochs.  My final hyperparameters are given in the code.  I performed only one 540 epoch train on the full training dataset of ~110k molecules, predicting all 12 targets at once (a 'joint' train).
 
-My results are shown in the following table:
+My results are shown in the following table, where MAE = Mean Absolute Error, and Ratio is MAE/ChemAcc, where the Chemical Accuracy is the accuracy required to make realistic chemical predictions.
 
-| Idx | Symbol | Description                                 | Unit     | ChemAcc |   MAE    |    Ratio |
-| --: | :--    | :-------------------------------------------|:---------|:--------|---------:|---------:|
+| Idx | Symbol | Description                                 | Unit     | ChemAcc |   MAE       Ratio |
+| --: | :--    | :-------------------------------------------|:---------|:--------|------------------:|
 |  0  | mu     | Dipole moment                               | D        | 0.1     |   0.6690     6.6899 |
 |  1  | alpha  | Isotropic polarizability                    | a0^3     | 0.1     |   2.9664    29.6642 |
 |  2  | HOMO   | Highest occupied molecular orbital energy   | eV       | 0.043   |   0.2000     4.6519 |
