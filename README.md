@@ -22,4 +22,4 @@ My results are shown in the following table, where MAE = Mean Absolute Error, an
 | 10  | G      | Free energy at 298.15K                      | eV       | 0.043   | 355.9486  8277.8740 |
 | 11  | Cv     | Heat capacity at 298.15K                    | cal/molK | 0.05    |   1.3688    27.3755 |
 
-These results are slightly less good than those in the paper, which used a separate model for each target rather than a joint train, and a more exhaustive hyperparameter search.  With Google's budget I'm sure I could do better!
+These results are slightly less good than those in the paper, which used a separate model for each target rather than a joint train, and a more exhaustive hyperparameter search.
