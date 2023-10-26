@@ -22,4 +22,4 @@ My results are shown in the following table, where MAE = Mean Absolute Error, an
 | Gatom  | Atomization free energy at 298.15K          | eV       | 0.043   | 355.9486  8277.8740 |
 | Cv     | Heat capacity at 298.15K                    | cal/molK | 0.05    |   1.3688    27.3755 |
 
-These results are slightly less good than those in Table 2 in the paper, which used a separate model for each target rather than a joint train, a more exhaustive hyperparameter search, and, it would appear, Acceptor and Donor atom features, for which I do not have data.  The paper also predicted a 13th target, Omega, for which I also do not have data.
+These results are slightly less good than those in Table 2 in the paper, which used a separate model for each target rather than a joint train, a more exhaustive hyperparameter search, and, it would appear, Acceptor and Donor atom features, which are not in my data.  The paper also predicted a 13th target, Omega, which is also not in my data.
