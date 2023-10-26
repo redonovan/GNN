@@ -7,19 +7,19 @@ Gilmer et al. used a random hyperparameter search with 50 trials for each model 
 
 My results are shown in the following table, where MAE = Mean Absolute Error, and Ratio is MAE/ChemAcc, where the Chemical Accuracy is the accuracy required to make realistic chemical predictions.
 
-| Idx | Symbol | Description                                 | Unit     | ChemAcc |   MAE       Ratio |
-| --: | :--    | :-------------------------------------------|:---------|:--------|------------------:|
-|  0  | mu     | Dipole moment                               | D        | 0.1     |   0.6690     6.6899 |
-|  1  | alpha  | Isotropic polarizability                    | a0^3     | 0.1     |   2.9664    29.6642 |
-|  2  | HOMO   | Highest occupied molecular orbital energy   | eV       | 0.043   |   0.2000     4.6519 |
-|  3  | LUMO   | Lowest unoccupied molecular orbital energy  | eV       | 0.043   |   0.2333     5.4250 |
-|  4  | gap    | Gap between HOMO and LUMO                   | eV       | 0.043   |   0.2968     6.9024 |
-|  5  | R2     | Electronic spatial extent                   | a0^2     | 1.2     | 106.3771    88.6476 |
-|  6  | ZPVE   | Zero point vibrational energy               | eV       | 0.0012  |   0.1793   149.4524 |
-|  7  | U0     | Internal energy at 0K                       | eV       | 0.043   | 355.8621  8275.8633 |
-|  8  | U      | Internal energy at 298.15K                  | eV       | 0.043   | 356.8731  8299.3740 |
-|  9  | H      | Enthalpy at 298.15K                         | eV       | 0.043   | 360.7728  8390.0645 |
-| 10  | G      | Free energy at 298.15K                      | eV       | 0.043   | 355.9486  8277.8740 |
-| 11  | Cv     | Heat capacity at 298.15K                    | cal/molK | 0.05    |   1.3688    27.3755 |
+| Symbol | Description                                 | Unit     | ChemAcc |   MAE       Ratio |
+| :--    | :-------------------------------------------|:---------|:--------|------------------:|
+| mu     | Dipole moment                               | D        | 0.1     |   0.6690     6.6899 |
+| alpha  | Isotropic polarizability                    | a0^3     | 0.1     |   2.9664    29.6642 |
+| HOMO   | Highest occupied molecular orbital energy   | eV       | 0.043   |   0.2000     4.6519 |
+| LUMO   | Lowest unoccupied molecular orbital energy  | eV       | 0.043   |   0.2333     5.4250 |
+| gap    | Gap between HOMO and LUMO                   | eV       | 0.043   |   0.2968     6.9024 |
+| R2     | Electronic spatial extent                   | a0^2     | 1.2     | 106.3771    88.6476 |
+| ZPVE   | Zero point vibrational energy               | eV       | 0.0012  |   0.1793   149.4524 |
+| U0atom | Atomization energy at 0K                    | eV       | 0.043   | 355.8621  8275.8633 |
+| Uatom  | Atomization energy at 298.15K               | eV       | 0.043   | 356.8731  8299.3740 |
+| Hatom  | Atomization enthalpy at 298.15K             | eV       | 0.043   | 360.7728  8390.0645 |
+| Gatom  | Atomization free energy at 298.15K          | eV       | 0.043   | 355.9486  8277.8740 |
+| Cv     | Heat capacity at 298.15K                    | cal/molK | 0.05    |   1.3688    27.3755 |
 
 These results are slightly less good than those in the paper, which used a separate model for each target rather than a joint train, and a more exhaustive hyperparameter search.
