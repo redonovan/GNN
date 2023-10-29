@@ -24,12 +24,12 @@ My results are shown in the following table, where MAE = Mean Absolute Error, an
 
 These results are less good than those in Table 2 in the paper; possible reasons for this include:
 
-1. The paper used a separate model for each target rather than a joint train, which brought an improvement of up to 40%.
+1. The paper used a separate model for each target rather than a joint train, bringing improvements of up to 40%.
 2. The paper used a more thorough hyperparameter search.
 3. The paper used Acceptor and Donor atom features, which are not in the PyTorch Geometric version of QM9.
 4. The paper does not give details of nn1, nn2 and lin (see code) and my versions may not be optimal.
 5. Mistakes I am not aware of!
 
-It should be noted that the paper also predicted a 13th target, Omega, which is not in the PyTorch Geometric version of QM9.
+The paper also predicted a 13th target, Omega, which is not in the PyTorch Geometric version of QM9.
 
 TensorBoard plots of the above training run are in train and valid.
