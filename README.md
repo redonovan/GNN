@@ -3,7 +3,7 @@
 
 My code in <a href=https://github.com/redonovan/GNN/blob/main/gnn.py>gnn.py</a> is implemented in PyTorch 1.11.0 directly from the paper <a href=https://arxiv.org/abs/1704.01212>Neural Message Passing for Quantum Chemistry, Gilmer et al., 2017</a>.  It uses a graph neural network, implemented using the <a href=https://pytorch-geometric.readthedocs.io/en/stable/index.html>PyTorch Geometric</a> library, to predict the chemical properties of molecules in the QM9 dataset.  The implementation is of the best performing network in the paper, using Edge Networks for message passing, a GRU for an update function, and a set2set readout function based on the paper <a href=https://arxiv.org/abs/1511.06391>Order Matters: Sequence to sequence for sets, Vinyals et al., 2015</a>.  
 
-Gilmer et al. predicted each target individually, using a random hyperparameter search with 50 trials for each target, each training for 540 epochs.  Since I don't have Google's compute budget, I instead predicted all 12 targets simultaneously (a 'joint' train) and used an abbreviated 10 trial hyperparameter search using a mini dataset for 10 epochs.  My final hyperparameters are given in my code and were used to perform one joint train on the full ~110k molecule training dataset for 540 epochs which took ~48 hours on my laptop.
+Gilmer et al. predicted each target individually, using a random hyperparameter search with 50 trials for each target, with each trial training for 540 epochs.  Unfortunately a single 540 epoch train on the full ~110k molecule training dataset would take approximately 329 hours on my laptop, which is prohibitive.  Since I don't have Google's compute resources or budget, I instead predicted all 12 targets simultaneously (a 'joint' train) and used a much abbreviated hyperparameter search using a much smaller dataset and fewer epochs.  My final hyperparameters are given in my code and were used to perform one joint train on an 11k molecule subset of the training dataset for 540 epochs.
 
 My results are shown in the following table, where MAE = Mean Absolute Error, and Ratio is MAE/ChemAcc, where the Chemical Accuracy is the accuracy required to make realistic chemical predictions.
 
@@ -22,13 +22,15 @@ My results are shown in the following table, where MAE = Mean Absolute Error, an
 | Gatom  | Atomization free energy at 298.15K          | eV       | 0.043   | 355.9486  8277.8740 |
 | Cv     | Heat capacity at 298.15K                    | cal/molK | 0.05    |   1.3688    27.3755 |
 
-These results are less good than those in Table 2 in the paper; possible reasons for this include:
+These results are most appropriately compared to the 11k training samples column in Table 6 in the paper.
+
+My results are slightly less good than those in Table 6; possible reasons for this include:
 
 1. The paper used a separate model for each target which can improve results by up to 40%.
 2. The paper used a more thorough hyperparameter search.
 3. The paper used Acceptor and Donor atom features, which are not in the PyTorch Geometric version of QM9.
 4. The paper does not give details of nn1, nn2 and lin (see my code) and my versions may not be optimal.
-5. The paper does not mention regularization, but including some might improve generalization.
+5. The paper does not mention regularization, and my choices may not be optimal.
 6. I may have made mistakes!
 
 The paper also predicted a 13th target, Omega, which is not in the PyTorch Geometric version of QM9.
