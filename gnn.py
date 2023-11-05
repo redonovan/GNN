@@ -1,4 +1,4 @@
-# Implementation of the best system from "Neural Message Passing for Quantum Chemistry",
+# Implementation of the best variant from "Neural Message Passing for Quantum Chemistry",
 # Gilmer et al., 2017, https://arxiv.org/abs/1704.01212, applying GNN to the QM9 dataset.
 # Oct-Nov, 2023 (v10)
 
