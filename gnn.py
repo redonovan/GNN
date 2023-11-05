@@ -10,7 +10,6 @@ torch.manual_seed(42)
 import torch.nn.functional as F
 import torch_geometric.transforms as transforms
 from torch_geometric.nn import NNConv
-from torch_geometric.nn import GCNConv
 from torch_geometric.nn.aggr import Set2Set
 from torch_geometric.loader import DataLoader
 from torch_geometric.datasets import QM9
